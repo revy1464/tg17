@@ -1,0 +1,35 @@
+controlador_index:
+    path: /Usuarios/index
+    defaults: {_controller: AppBundle:Usuarios:index}
+    
+controlador_addPerfil:
+    path: /perfiles/addPerfil
+    defaults: {_controller: AppBundle:Usuarios:addPerfil}
+
+controlador_readPerfil:
+    path: /perfiles/readPerfil
+    defaults: {_controller: AppBundle:Usuarios:readPerfil}
+    
+controlador_delPerfil:
+    path: /perfiles/delPerfil/{id}
+    defaults: {_controller: AppBundle:Usuarios:delPerfil}
+    
+controlador_addModulo:
+    path: /modulos/addModulo
+    defaults: {_controller: AppBundle:Modulos:addModulo}
+    
+controlador_readModulo:
+    path: /modulos/readModulo
+    defaults: {_controller: AppBundle:Modulos:readModulo}
+
+controlador_delModulo:
+    path: /modulos/delModulo/{id}
+    defaults: {_controller: AppBundle:Modulos:delModulo}
+    
+controlador_addPerfilMOD:
+    path: /perfilesMOD/addPerfilMOD/{idPerfil}/{idModulo}
+    defaults: {_controller: AppBundle:perfilesMOD:addPerfilMOD, idPerfil:GER,idModulo:MUS}
+    
+controlador_addUsuario:
+    path: /usuarios/addUsuario
+    defaults: {_controller: AppBundle:Usuarios:addUsuario}

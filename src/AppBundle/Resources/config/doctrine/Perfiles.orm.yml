@@ -1,0 +1,33 @@
+AppBundle\Entity\Perfiles:
+    type: entity
+    table: perfiles
+    uniqueConstraints:
+        nombre_Perfil_UNIQUE:
+            columns:
+                - nombre_Perfil
+    id:
+        idPerfilUsuario:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+            id: true
+            column: idPerfil_Usuario
+
+    fields:
+        nombrePerfil:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: nombre_Perfil
+        descripcionPerfil:
+            type: string
+            nullable: false
+            length: 150
+            options:
+                fixed: false
+            column: descripcion_Perfil
+    lifecycleCallbacks: {  }

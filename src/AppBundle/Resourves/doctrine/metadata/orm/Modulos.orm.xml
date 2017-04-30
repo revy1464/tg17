@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Modulos" table="modulos">
+    <unique-constraints>
+      <unique-constraint name="nombre_servicio_UNIQUE" columns="nombre_modulo"/>
+    </unique-constraints>
+    <id name="idmodulos" type="string" column="idModulos" length="3">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreModulo" type="string" column="nombre_modulo" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionModulo" type="string" column="descripcion_modulo" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,42 @@
+AppBundle\Entity\PerfilUsuario:
+    type: entity
+    table: perfil_usuario
+    indexes:
+        fk_Perfil_Usuario_Usuario_idx:
+            columns:
+                - Usuario_idUsuario
+        fk_Perfil_Usuario_Perfiles1_idx:
+            columns:
+                - Perfiles_idPerfil_Usuario
+    id:
+        idperfilUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idPerfil_Usuario
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        perfilesperfilUsuario:
+            targetEntity: Perfiles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Perfiles_idPerfil_Usuario:
+                    referencedColumnName: idPerfil_Usuario
+            orphanRemoval: false
+        usuariousuario:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Usuario_idUsuario:
+                    referencedColumnName: idUsuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

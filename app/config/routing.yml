@@ -1,0 +1,7 @@
+rutas_Bundle:
+    resource: '@AppBundle/Resources/config/rutas.yml'
+    prefix: /
+        
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

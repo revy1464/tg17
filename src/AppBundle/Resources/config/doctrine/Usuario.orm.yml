@@ -1,0 +1,94 @@
+AppBundle\Entity\Usuario:
+    type: entity
+    table: usuario
+    uniqueConstraints:
+        login_usuario_UNIQUE:
+            columns:
+                - login_usuario
+        cedula_usuario_UNIQUE:
+            columns:
+                - cedula_usuario
+    id:
+        idusuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idUsuario
+    fields:
+        cedulaUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: cedula_usuario
+        nombreUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: nombre_usuario
+        apellidoUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: apellido_usuario
+        direccioUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: direccio_usuario
+        telefonoUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: telefono_usuario
+        celularUsuario:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: celular_usuario
+        fechaNacimientoUsuario:
+            type: date
+            nullable: false
+            column: fecha_nacimiento_usuario
+        emailUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: email_usuario
+        profesionUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: profesion_usuario
+        loginUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: login_usuario
+        passwordUsuario:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: password_usuario
+    lifecycleCallbacks: {  }

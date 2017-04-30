@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PerfilesModulos" table="perfiles_modulos">
+    <indexes>
+      <index name="fk_Perfiles_Modulos_Perfiles1_idx" columns="Perfiles_idPerfil_Usuario"/>
+      <index name="fk_Perfiles_Modulos_Modulos1_idx" columns="Modulos_idModulos"/>
+    </indexes>
+    <id name="idperfilesModulos" type="integer" column="idPerfiles_Modulos">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="modulosmodulos" target-entity="Modulos" fetch="LAZY">
+      <join-columns>
+        <join-column name="Modulos_idModulos" referenced-column-name="idModulos"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="perfilesperfilUsuario" target-entity="Perfiles" fetch="LAZY">
+      <join-columns>
+        <join-column name="Perfiles_idPerfil_Usuario" referenced-column-name="idPerfil_Usuario"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

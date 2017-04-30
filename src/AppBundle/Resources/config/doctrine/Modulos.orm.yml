@@ -1,0 +1,33 @@
+AppBundle\Entity\Modulos:
+    type: entity
+    table: modulos
+    uniqueConstraints:
+        nombre_servicio_UNIQUE:
+            columns:
+                - nombre_modulo
+    id:
+        idModulos:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+            id: true
+            column: idModulos
+
+    fields:
+        nombreModulo:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: nombre_modulo
+        descripcionModulo:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: descripcion_modulo
+    lifecycleCallbacks: {  }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Usuario" table="usuario">
+    <unique-constraints>
+      <unique-constraint name="login_usuario_UNIQUE" columns="login_usuario"/>
+      <unique-constraint name="cedula_usuario_UNIQUE" columns="cedula_usuario"/>
+    </unique-constraints>
+    <id name="idusuario" type="integer" column="idUsuario">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cedulaUsuario" type="string" column="cedula_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombreUsuario" type="string" column="nombre_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="apellidoUsuario" type="string" column="apellido_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="direccioUsuario" type="string" column="direccio_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="telefonoUsuario" type="string" column="telefono_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="celularUsuario" type="string" column="celular_usuario" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fechaNacimientoUsuario" type="date" column="fecha_nacimiento_usuario" nullable="false"/>
+    <field name="emailUsuario" type="string" column="email_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="profesionUsuario" type="string" column="profesion_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="loginUsuario" type="string" column="login_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="passwordUsuario" type="string" column="password_usuario" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

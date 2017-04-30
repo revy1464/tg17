@@ -1,0 +1,40 @@
+AppBundle\Entity\PerfilesModulos:
+    type: entity
+    table: perfiles_modulos
+    indexes:
+        fk_Perfiles_Modulos_Perfiles1_idx:
+            columns:
+                - Perfiles_idPerfil_Usuario
+        fk_Perfiles_Modulos_Modulos1_idx:
+            columns:
+                - Modulos_idModulos
+    id:
+        idperfilesModulos:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idPerfiles_Modulos
+    manyToOne:
+        modulosmodulos:
+            targetEntity: Modulos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Modulos_idModulos:
+                    referencedColumnName: idModulos
+            orphanRemoval: false
+        perfilesperfilUsuario:
+            targetEntity: Perfiles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Perfiles_idPerfil_Usuario:
+                    referencedColumnName: idPerfil_Usuario
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

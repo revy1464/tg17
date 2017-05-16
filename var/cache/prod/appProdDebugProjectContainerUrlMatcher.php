@@ -28,24 +28,24 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
         $request = $this->request;
 
         // controlador_index
-        if ($pathinfo === '/Usuarios/index') {
+        if ($pathinfo === '/usuarios/index') {
             return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::indexAction',  '_route' => 'controlador_index',);
         }
 
         if (0 === strpos($pathinfo, '/perfiles')) {
             // controlador_addPerfil
             if ($pathinfo === '/perfiles/addPerfil') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::addPerfilAction',  '_route' => 'controlador_addPerfil',);
+                return array (  '_controller' => 'AppBundle\\Controller\\perfilesController::addPerfilAction',  '_route' => 'controlador_addPerfil',);
             }
 
             // controlador_readPerfil
             if ($pathinfo === '/perfiles/readPerfil') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::readPerfilAction',  '_route' => 'controlador_readPerfil',);
+                return array (  '_controller' => 'AppBundle\\Controller\\perfilesController::readPerfilAction',  '_route' => 'controlador_readPerfil',);
             }
 
             // controlador_delPerfil
             if (0 === strpos($pathinfo, '/perfiles/delPerfil') && preg_match('#^/perfiles/delPerfil/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'controlador_delPerfil')), array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::delPerfilAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'controlador_delPerfil')), array (  '_controller' => 'AppBundle\\Controller\\perfilesController::delPerfilAction',));
             }
 
         }
@@ -73,9 +73,37 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'controlador_addPerfilMOD')), array (  '_controller' => 'AppBundle\\Controller\\perfilesMODController::addPerfilMODAction',  'idPerfil' => 'GER',  'idModulo' => 'MUS',));
         }
 
-        // controlador_addUsuario
-        if ($pathinfo === '/usuarios/addUsuario') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::addUsuarioAction',  '_route' => 'controlador_addUsuario',);
+        if (0 === strpos($pathinfo, '/usuarios')) {
+            // controlador_addUsuario
+            if ($pathinfo === '/usuarios/addUsuario') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::addUsuarioAction',  '_route' => 'controlador_addUsuario',);
+            }
+
+            // controlador_readUsuario
+            if ($pathinfo === '/usuarios/readUsuario') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::readUsuarioAction',  '_route' => 'controlador_readUsuario',);
+            }
+
+            // controlador_delUsuario
+            if (0 === strpos($pathinfo, '/usuarios/delUsuario') && preg_match('#^/usuarios/delUsuario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'controlador_delUsuario')), array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::delUsuarioAction',));
+            }
+
+            // controlador_updateUsuario
+            if ($pathinfo === '/usuarios/updateUsuario') {
+                return array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::updateUsuarioAction',  '_route' => 'controlador_updateUsuario',);
+            }
+
+            // controlador_loginAction
+            if (0 === strpos($pathinfo, '/usuarios/login') && preg_match('#^/usuarios/login(?:/(?P<login>[^/]++)(?:/(?P<password>[^/]++))?)?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'controlador_loginAction')), array (  '_controller' => 'AppBundle\\Controller\\UsuariosController::loginAction',  'login' => 'admin',  'password' => 'admin',));
+            }
+
+        }
+
+        // controlador_soap
+        if ($pathinfo === '/soap') {
+            return array (  '_controller' => 'AppBundle\\Controller\\HelloServiceController::indexAction',  '_route' => 'controlador_soap',);
         }
 
         // homepage

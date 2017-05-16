@@ -1,18 +1,18 @@
 controlador_index:
-    path: /Usuarios/index
+    path: /usuarios/index
     defaults: {_controller: AppBundle:Usuarios:index}
     
 controlador_addPerfil:
     path: /perfiles/addPerfil
-    defaults: {_controller: AppBundle:Usuarios:addPerfil}
+    defaults: {_controller: AppBundle:perfiles:addPerfil}
 
 controlador_readPerfil:
     path: /perfiles/readPerfil
-    defaults: {_controller: AppBundle:Usuarios:readPerfil}
+    defaults: {_controller: AppBundle:perfiles:readPerfil}
     
 controlador_delPerfil:
     path: /perfiles/delPerfil/{id}
-    defaults: {_controller: AppBundle:Usuarios:delPerfil}
+    defaults: {_controller: AppBundle:perfiles:delPerfil}
     
 controlador_addModulo:
     path: /modulos/addModulo
@@ -33,3 +33,23 @@ controlador_addPerfilMOD:
 controlador_addUsuario:
     path: /usuarios/addUsuario
     defaults: {_controller: AppBundle:Usuarios:addUsuario}
+    
+controlador_readUsuario:
+    path: /usuarios/readUsuario
+    defaults: {_controller: AppBundle:Usuarios:readUsuario}
+    
+controlador_delUsuario:
+    path: /usuarios/delUsuario/{id}
+    defaults: {_controller: AppBundle:Usuarios:delUsuario}
+    
+controlador_updateUsuario:
+    path: /usuarios/updateUsuario
+    defaults: {_controller: AppBundle:Usuarios:updateUsuario}
+    
+controlador_loginAction:
+    path: /usuarios/login/{login}/{password}
+    defaults: {_controller: AppBundle:Usuarios:login, login:admin,password:admin}
+    
+controlador_soap:
+    path: /soap
+    defaults: {_controller: AppBundle:HelloService:index}
